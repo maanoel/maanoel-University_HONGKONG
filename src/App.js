@@ -1,8 +1,5 @@
 import { DISHES } from './shared/dishes';
-import {Navbar, NavbarBrand} from 'reactstrap';
-import Menu from './components/MenuComponent.js';
-
-import './App.css';
+import Main from './components/MainComponent';
 
 import { Component } from 'react';
 
@@ -18,12 +15,7 @@ class App extends Component  {
   render(){
     return (
     <div>
-       <Navbar dark color="primary">
-        <div className="container">
-          <NavbarBrand href="/"> Restaurante Fusão</NavbarBrand>
-        </div>
-       </Navbar>
-       <Menu dishes={this.state.dishes}></Menu>
+      <Main/>
     </div>
   )};
 }

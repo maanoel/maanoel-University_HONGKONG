@@ -34,6 +34,13 @@ class DishDetail extends Component {
             <div className="row">{comment.comment}</div>
             <div className="mt-1"></div>
             <div className="row">{comment.author}</div>
+            <div className="row">
+              {new Intl.DateTimeFormat("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "2-digit",
+              }).format(new Date(Date.parse(comment.date)))}
+            </div>
           </li>
         );
       });
@@ -43,8 +50,8 @@ class DishDetail extends Component {
           <div className="row col-xs-12 col-sm-12 col-md-5 col-lg-5 m-1">
             <h1>Comments</h1>
           </div>
-            <div className="row col-xs-12 col-sm-12 col-md-12 col-lg-12 ml-3">
-              <ul className="list-unstyled">{commentsList}</ul>
+          <div className="row col-xs-12 col-sm-12 col-md-12 col-lg-12 ml-3">
+            <ul className="list-unstyled">{commentsList}</ul>
           </div>
         </div>
       );
