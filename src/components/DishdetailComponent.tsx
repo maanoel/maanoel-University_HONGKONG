@@ -13,16 +13,14 @@ class DishDetail extends Component {
   renderDish(dish) {
     if (dish != null) {
       return (
-        <div className="row">
-          <div className="row col-xs-12 col-sm-12 col-md-5 col-lg-5 m-1">
-            <Card>
-              <CardImg top src={dish.image} alt={dish.name}></CardImg>
-              <CardBody>
-                <CardTitle>{dish.name}</CardTitle>
-                <CardText>{dish.description}</CardText>
-              </CardBody>
-            </Card>
-          </div>
+        <div className="row col-xs-12 col-sm-12 col-md-5 col-lg-5 m-1">
+          <Card>
+            <CardImg top src={dish.image} alt={dish.name}></CardImg>
+            <CardBody>
+              <CardTitle>{dish.name}</CardTitle>
+              <CardText>{dish.description}</CardText>
+            </CardBody>
+          </Card>
         </div>
       );
     } else return <div></div>;
@@ -34,18 +32,19 @@ class DishDetail extends Component {
         return (
           <li>
             <div className="row">{comment.comment}</div>
+            <div className="mt-1"></div>
             <div className="row">{comment.author}</div>
           </li>
         );
       });
 
       return (
-        <div className="row">
+        <div>
           <div className="row col-xs-12 col-sm-12 col-md-5 col-lg-5 m-1">
-            <div className="row">
-              <h1>Comments</h1>
-            </div>
-            <ul className="list-unstyled">{commentsList}</ul>
+            <h1>Comments</h1>
+          </div>
+            <div className="row col-xs-12 col-sm-12 col-md-12 col-lg-12 ml-3">
+              <ul className="list-unstyled">{commentsList}</ul>
           </div>
         </div>
       );
