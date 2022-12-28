@@ -19,12 +19,6 @@ class Menu extends Component {
     console.log("Teste");
   }
 
-  renderDish(dish) {
-    if (dish != null) {
-      return <DishDetail dish={dish}></DishDetail>;
-    } else return <div></div>;
-  }
-
   render() {
     const menu = this.state.dishes.map((dish) => {
       return (
@@ -42,7 +36,7 @@ class Menu extends Component {
     return (
       <div className="container">
         <div className="row">{menu}</div>
-        {this.renderDish(this.state.selectedDish)}
+        <DishDetail dish={this.state.selectedDish}></DishDetail>
       </div>
     );
   }
