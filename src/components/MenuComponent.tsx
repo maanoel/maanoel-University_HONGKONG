@@ -20,6 +20,10 @@ class Menu extends Component {
     this.setState({ selectedDish: dish });
   }
 
+  componentDidMount(){
+    console.log("Teste");
+  }
+
   renderDish(dish) {
     if (dish != null)
       return (
