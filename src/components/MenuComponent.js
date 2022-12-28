@@ -16,7 +16,6 @@ class Menu extends Component {
   }
 
   componentDidMount() {
-    console.log("Teste");
   }
 
   render() {
