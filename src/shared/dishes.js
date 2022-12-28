@@ -116,8 +116,8 @@ export const DISHES = [
         id: 1,
         rating: 4,
         comment:
-          "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
-        author: "Paul McVites",
+          "Teste para vericiar se está pegando modificações ao mudar o estado do react",
+        author: "Vitor Brito",
         date: "2014-09-05T17:57:28.556094Z",
       },
       {
@@ -130,8 +130,8 @@ export const DISHES = [
       {
         id: 3,
         rating: 4,
-        comment: "Ultimate, Reaching for the stars!",
-        author: "Ringo Starry",
+        comment: "Vendo se o React altera o status",
+        author: "Pelo Ramos",
         date: "2013-12-02T17:57:28.556094Z",
       },
       {
