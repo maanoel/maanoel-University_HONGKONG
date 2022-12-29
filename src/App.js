@@ -1,23 +1,28 @@
-import { DISHES } from './shared/dishes';
-import Main from './components/MainComponent';
+import { DISHES } from "./shared/dishes";
+import Main from "./components/MainComponent";
+import { BrowserRouter } from "react-router-dom";
 
-import { Component } from 'react';
+import "./App.css";
 
-class App extends Component  {
+import { Component } from "react";
 
-  constructor(props){
+class App extends Component {
+  constructor(props) {
     super(props);
     this.state = {
-      dishes:DISHES
+      dishes: DISHES,
     };
   }
 
-  render(){
+  render() {
     return (
-    <div>
-      <Main/>
-    </div>
-  )};
+      <BrowserRouter>
+        <div>
+          <Main />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
