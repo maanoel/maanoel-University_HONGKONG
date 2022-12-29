@@ -22,8 +22,8 @@ class Main extends Component {
     this.setState({ selectedDish: dishId });
   }
 
-  render() { 
-    if(Object.keys(this.props).length === 0) return (<div></div>);
+  render() {
+    if (Object.keys(this.props).length === 0) return <div></div>;
 
     const HomePage = () => {
       return (
@@ -43,9 +43,11 @@ class Main extends Component {
               (dish) => dish.id === parseInt(match.params.dishId, 10)
             )[0]
           }
-          comments={this.props.comments.filter(
-            (comment) => comment.dishId === parseInt(match.params.dishId, 10)
-          )}
+          comments={
+            this.props.comments.filter(
+              (comment) => comment.dishId === parseInt(match.params.dishId, 10)
+            )
+          }
         />
       );
     };
@@ -77,6 +79,11 @@ class Main extends Component {
                 (dish) => dish.id === this.state.selectedDish
               )[0]
             }
+            comments={
+              this.props.comments.filter(
+                (comment) => comment.dishId === this.state.selectedDish
+              )[0]
+            }
           />
         </div>
 
@@ -87,7 +94,7 @@ class Main extends Component {
 }
 
 const mapStateToProps = (state) => {
-  if(!state) return {};
+  if (!state) return {};
 
   return {
     state: Object.assign({}, state),
@@ -97,12 +104,5 @@ const mapStateToProps = (state) => {
     leaders: state.leaders,
   };
 };
-
-function mapDispatchToProps(dispatch) {
-  return {
-      
-  }
-}
-
 
 export default withRouter(connect(mapStateToProps)(Main));
