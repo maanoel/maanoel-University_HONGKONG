@@ -1,9 +1,17 @@
 import React from "react";
-import { Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap";
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  Breadcrumb,
+  BreadcrumbItem,
+} from "reactstrap";
+import { Link } from "react-router-dom";
 
 const DishDetail = (props) => {
-
-  function renderDish() {
+  function RenderDish() {
     if (props.dish != null) {
       return (
         <div className="row col-xs-12 col-sm-12 col-md-5 col-lg-5 m-1">
@@ -19,9 +27,9 @@ const DishDetail = (props) => {
     } else return <div></div>;
   }
 
-  function renderComments() {
-    if (props.dish.comments != null) {
-      const commentsList = props.dish.comments.map((comment) => {
+  function RenderComments() {
+    if (props.comments != null) {
+      const commentsList = props.comments.map((comment) => {
         return (
           <li>
             <div className="row">{comment.comment}</div>
@@ -38,16 +46,29 @@ const DishDetail = (props) => {
         );
       });
 
+      
       return (
-        <div>
-          <div className="row col-xs-12 col-sm-12 col-md-5 col-lg-5 m-1">
-            <h1>Comments</h1>
-          </div>
-          <div className="row col-xs-12 col-sm-12 col-md-12 col-lg-12 ml-3">
-            <ul className="list-unstyled">{commentsList}</ul>
-          </div>
+        <div className="container">
+        <div className="row">
+            <Breadcrumb>
+                <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+                <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+            </Breadcrumb>
+            <div className="col-12">
+                <h3>{props.dish.name}</h3>
+                <hr />
+            </div>                
         </div>
-      );
+        <div className="row">
+            <div className="col-12 col-md-5 m-1">
+                <RenderDish dish={props.dish} />
+            </div>
+            <div className="col-12 col-md-5 m-1">
+                <RenderComments comments={props.comments} />
+            </div>
+        </div>
+        </div>
+    );
     } else return <div></div>;
   }
 
@@ -55,8 +76,8 @@ const DishDetail = (props) => {
     if (props.dish != null)
       return (
         <div className="row">
-          {renderDish()}
-          {renderComments()}
+          {RenderDish()}
+          {RenderComments()}
         </div>
       );
     else return <div></div>;
