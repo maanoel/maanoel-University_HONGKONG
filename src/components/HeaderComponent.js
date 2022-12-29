@@ -7,10 +7,8 @@ import {
   NavItem,
   Jumbotron,
 } from "reactstrap";
-
-import {Component} from 'react';
-
 import { NavLink } from "react-router-dom";
+import{ Component} from 'react';
 
 class Header extends Component {
   constructor(props) {
