@@ -15,13 +15,13 @@ import {
   Label,
   Input,
   FormFeedback,
-  Alert
 } from "reactstrap";
 
+import { Loading } from "./LoadingComponent";
 
 import { Component } from "react";
 
-  
+
 class DishDetail extends Component {
   constructor(props) {
     super(props);
@@ -41,14 +41,28 @@ class DishDetail extends Component {
     });
   }
 
-  setName(name){
-    debugger;
-    alert('oi'+ name);
-    this.setState({name: name})
+  setName(name) {
+    this.setState({ name: name });
   }
 
   RenderDish() {
-    if (this.props.dish != null) {
+    if (this.props.isLoading) {
+      return (
+        <div className="container">
+          <div className="row">
+            <Loading />
+          </div>
+        </div>
+      );
+    } else if (this.props.errMess) {
+      return (
+        <div className="container">
+          <div className="row">
+            <h4>{this.props.errMess}</h4>
+          </div>
+        </div>
+      );
+    } else if (this.props.dish != null) {
       return (
         <div className="row col-xs-12 col-sm-12 col-md-5 col-lg-5 m-1">
           <Card>
@@ -116,25 +130,37 @@ class DishDetail extends Component {
                     name="name"
                     id="name"
                     placeholder="Your name"
-                    onBlur={(e)=> this.setName(e.target.value)}
-                    invalid={()=> this.state?.name?.length < 2 || this.state?.name?.length > 15}
-                    valid={()=> this.state?.name?.length > 2 && this.state?.name?.length <= 15}
+                    onBlur={(e) => this.setName(e.target.value)}
+                    invalid={() =>
+                      this.state?.name?.length < 2 ||
+                      this.state?.name?.length > 15
+                    }
+                    valid={() =>
+                      this.state?.name?.length > 2 &&
+                      this.state?.name?.length <= 15
+                    }
                   />
                 </FormGroup>
                 <FormFeedback
-                    className="text-danger"
-                    model=".telnum"
-                    show="touched"
-                    messages={{
-                      required: "Required",
-                      minLength: "Must be greater than 1 numbers",
-                      maxLength: "Must be 15 numbers or less",
-                      isNumber: "Must be a number",
-                    }}
-                  />
+                  className="text-danger"
+                  model=".telnum"
+                  show="touched"
+                  messages={{
+                    required: "Required",
+                    minLength: "Must be greater than 1 numbers",
+                    maxLength: "Must be 15 numbers or less",
+                    isNumber: "Must be a number",
+                  }}
+                />
                 <FormGroup>
                   <Label for="comment">Comment</Label>
-                  <Input type="textarea" name="comment" id="comment" rows="6" cols="6"/>
+                  <Input
+                    type="textarea"
+                    name="comment"
+                    id="comment"
+                    rows="6"
+                    cols="6"
+                  />
                 </FormGroup>
               </Form>
             </ModalBody>

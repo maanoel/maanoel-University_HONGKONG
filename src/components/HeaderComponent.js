@@ -10,10 +10,6 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  Form,
-  FormGroup,
-  Input,
-  Label,
   ModalFooter
 } from "reactstrap";
 import { NavLink } from "react-router-dom";

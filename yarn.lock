@@ -4592,6 +4592,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cross-fetch@npm:2.1.0":
+  version: 2.1.0
+  resolution: "cross-fetch@npm:2.1.0"
+  dependencies:
+    node-fetch: 2.1.1
+    whatwg-fetch: 2.0.3
+  checksum: a92d297acfde83c2a40ddb2e14045e1834ae055dcd4ef86e794cf90c8fdcd0f8cfaf7d1e975afcc2baa3ab4cf5015342e9c7b80c050ddbb32088cb3a072f1cc1
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -4947,6 +4957,13 @@ __metadata:
   version: 0.7.0
   resolution: "dedent@npm:0.7.0"
   checksum: 87de191050d9a40dd70cad01159a0bcf05ecb59750951242070b6abf9569088684880d00ba92a955b4058804f16eeaf91d604f283929b4f614d181cd7ae633d2
+  languageName: node
+  linkType: hard
+
+"deep-diff@npm:^0.3.5":
+  version: 0.3.8
+  resolution: "deep-diff@npm:0.3.8"
+  checksum: 8a0fb6cbe468e50211836f8daa1c14798b2d7436bfbcb7d8eb0902e0d61bf1dfd48d5b9edd46a10596182b90ad25f87461b8e55111ff9257b6067ad0676f79c9
   languageName: node
   linkType: hard
 
@@ -8939,6 +8956,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-fetch@npm:2.1.1":
+  version: 2.1.1
+  resolution: "node-fetch@npm:2.1.1"
+  checksum: 0981798199ca90b7f82d11005a98ca14432b237cd6957e8e876e1ccb8a309eabb865f8970ba83e2a2190e389843d5fe84aff61221fcf68aa91f068af54415d43
+  languageName: node
+  linkType: hard
+
 "node-forge@npm:^1":
   version: 1.3.1
   resolution: "node-forge@npm:1.3.1"
@@ -10927,6 +10951,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"redux-logger@npm:3.0.6":
+  version: 3.0.6
+  resolution: "redux-logger@npm:3.0.6"
+  dependencies:
+    deep-diff: ^0.3.5
+  checksum: c40f63c44c6475cf6374ae0eaa810d913f142614cb80692a0beacaf135c5dc3eb3e2cdd4296f01446ba48cb69b82e81363b84d829f1f6659382c991022a814ac
+  languageName: node
+  linkType: hard
+
+"redux-thunk@npm:2.2.0":
+  version: 2.2.0
+  resolution: "redux-thunk@npm:2.2.0"
+  checksum: 25e6d655cf13cacb443d6a7630e2a04a51e915b61a3e2d1bfbcd769b0c65fce9b55ac8e122eded7f03d8cb1aca90f588741f6f7698239e23d1b187d1f6a68212
+  languageName: node
+  linkType: hard
+
 "redux@npm:3.7.2":
   version: 3.7.2
   resolution: "redux@npm:3.7.2"
@@ -12203,6 +12243,7 @@ __metadata:
     "@types/react": ^18.0.26
     bootstrap: ^4.0.0
     bootstrap-social: 5.1.1
+    cross-fetch: 2.1.0
     font-awesome: 4.7.0
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -12213,6 +12254,8 @@ __metadata:
     react-scripts: 5.0.1
     reactstrap: 5.0.0
     redux: 3.7.2
+    redux-logger: 3.0.6
+    redux-thunk: 2.2.0
     web-vitals: ^2.1.4
   languageName: unknown
   linkType: soft
@@ -12877,6 +12920,13 @@ __metadata:
   dependencies:
     iconv-lite: 0.4.24
   checksum: 5be4efe111dce29ddee3448d3915477fcc3b28f991d9cf1300b4e50d6d189010d47bca2f51140a844cf9b726e8f066f4aee72a04d687bfe4f2ee2767b2f5b1e6
+  languageName: node
+  linkType: hard
+
+"whatwg-fetch@npm:2.0.3":
+  version: 2.0.3
+  resolution: "whatwg-fetch@npm:2.0.3"
+  checksum: b2b1c94900e51afee17a5a6d05d8058f4dbb7d10868f0f016fff2dbf3a212098e01f8f4bc7d93c7c91b0a6c42f248a1d23c7bec869f2f8c7d6cec5bc4b704d07
   languageName: node
   linkType: hard
 
