@@ -7,6 +7,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
 } from "reactstrap";
+
 import { Link } from "react-router-dom";
 
 function RenderMenuItem ({dish, onClick}) {
@@ -37,6 +38,7 @@ const Menu = (props) => {
             <Breadcrumb>
                 <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                 <BreadcrumbItem active>Menu</BreadcrumbItem>
+                <BreadcrumbItem><Link to="/aboutus">About us</Link></BreadcrumbItem>
             </Breadcrumb>
             <div className="col-12">
                 <h3>Menu</h3>
